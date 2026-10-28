@@ -1,0 +1,14 @@
+<div class="flex h90vh flex-wrap align-content-center justify-content-center">
+    <form class="grid gap1" #loginForm="ngForm" (ngSubmit)="sendLogInInfo()" >
+        <div>
+            <label for="username">UserName</label>
+            <input class="form-control" type="text" name="username" id="username" #username>
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input class="form-control" type="password" name="password" id="password" #password>
+        </div>
+        <button class="btnM w-fitContent" type="submit" >Log in</button>
+    </form>
+</div>

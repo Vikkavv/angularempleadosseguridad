@@ -1,0 +1,9 @@
+<h1>Resultados de '{{searched}}'</h1>
+<br>
+<div class="grid gap1">
+    @for (result of results; track $index) {
+        <div class="btnM">
+            <a [routerLink]="['/',result.path]">{{result.name}}</a>
+        </div>
+    }
+</div>
