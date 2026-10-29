@@ -4,11 +4,12 @@ import { Inject } from "@angular/core";
 
 
 export default function checkSession(): boolean{
-    if(EmpleadoService.token == "" || !EmpleadoService.token || EmpleadoService.token === undefined){
+  let token = sessionStorage.getItem("token");
+    if(token == "" || !token || token === undefined){
         return false
     }
     return true
 }
 
 
-        
+

@@ -7,7 +7,10 @@
 
         <div>
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" #password>
+            <div class="flex">
+              <input class="form-control norightborderRadius" type="password" name="password" id="password" #password>
+              <button class="btn btn-outline-secondary noleftborderRadius" type="button" (click)="verPassword()" >Ver</button>
+            </div>
         </div>
         <button class="btnM w-fitContent" type="submit" >Log in</button>
     </form>

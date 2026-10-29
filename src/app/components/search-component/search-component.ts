@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit{
     let resultsLocal: Result[] = [];
     for (const route of routes) {
       let inComponentName = (route.component?.name)?.toLocaleLowerCase().includes(this.searched);
-      if((route.path?.includes(this.searched) || inComponentName ) && !(route.path?.includes(":"))) 
+      if((route.path?.includes(this.searched) || inComponentName ) && !(route.path?.includes(":")))
         resultsLocal.push(new Result(normalizeCamelCase(route.component?.name ?? ""), (route.path ?? "") === '' ? '/' : route.path ?? ""));
     }
     this.results = resultsLocal;
@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit{
         this.searched = params['searched'];
         this.createSearch();
             this._detector.detectChanges();
-      })   
+      })
   }
 }
 
@@ -44,11 +44,10 @@ export function normalizeCamelCase(camelCaseStr: string): string {
     if(letters.includes(char)){
       normalized += lowerCased.slice(lastWordIndex, i) + " ";
       lastWordIndex = i;
-    } 
+    }
   }
   normalized += lowerCased.slice(lastWordIndex, camelCaseStr.length);
   normalized = normalized.replace("_ ", "").replace("component","");
-  console.log(normalized, camelCaseStr);
   return capitalize(normalized);
 }
 

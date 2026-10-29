@@ -1,1 +1,16 @@
-<p>home-component works!</p>
+<br>
+<div class="flex justify-content-between">
+  <h1>Home</h1>
+  <button class="btn btn-outline-danger w-fitContent h-fitContent" (click)="closeSession()" >Cerrar sesion</button>
+</div>
+<!--<h2>{{token}}</h2>-->
+<br>
+<div class="grid col5 gap1">
+  @for (empleado of empleados; track $index) {
+    <div class="cardM">
+      <h4>{{empleado.apellido}}</h4>
+      <h4>{{empleado.oficio}}</h4>
+      <h5>{{empleado.salario}} €</h5>
+    </div>
+  }
+</div>

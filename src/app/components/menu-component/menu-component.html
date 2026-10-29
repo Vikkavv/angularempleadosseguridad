@@ -13,6 +13,9 @@
           <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/login']">Iniciar sesión</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/perfil']">Perfil</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/subordinados']">Ver mis subordinados</a>
         </li>
         <!--
@@ -29,10 +32,20 @@
         </li>
         -->
       </ul>
-      <form class="d-flex" role="search" #searchForm="ngForm" (ngSubmit)="redirectToSearch()">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #searched />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="flex gap1">
+        <h2>
+          @if(usuario(); as user){
+            {{user.apellido}}
+          }
+          @else {
+            sin sesion
+          }
+        </h2>
+        <form class="d-flex" role="search" #searchForm="ngForm" (ngSubmit)="redirectToSearch()">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #searched />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
   </div>
 </nav>

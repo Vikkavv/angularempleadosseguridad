@@ -1,1 +1,13 @@
-<p>subordinados-component works!</p>
+<br>
+<h1>Mis subordinados</h1>
+<br>
+<div class="grid col5 gap1">
+  @for (empleado of subordinados; track $index) {
+    <div class="cardM">
+      <h4>{{empleado.apellido}}</h4>
+      <h4>{{empleado.oficio}}</h4>
+      <h5>{{empleado.salario}} €</h5>
+    </div>
+  }
+</div>
+

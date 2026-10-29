@@ -10,6 +10,9 @@ import { MenuComponent } from './components/menu-component/menu-component';
 import { SearchComponent } from './components/search-component/search-component';
 import { FormsModule } from '@angular/forms';
 import { EmpleadoService } from './services/EmpleadoService';
+import { AuthGuard } from './guards/auth-guard';
+import { ContadorSignal } from './components/contador-signal/contador-signal';
+import { AuthEmpleadosService } from './services/AuthEmpleadosService';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,10 @@ import { EmpleadoService } from './services/EmpleadoService';
     LoginComponent,
     MenuComponent,
     SearchComponent,
+    ContadorSignal,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [provideBrowserGlobalErrorListeners(), AppRoutingModule, EmpleadoService],
+  providers: [provideBrowserGlobalErrorListeners(), AppRoutingModule, EmpleadoService, AuthGuard, AuthEmpleadosService],
   bootstrap: [App],
 })
 export class AppModule {}

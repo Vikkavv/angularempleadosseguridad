@@ -34,6 +34,17 @@
     }
 }
 
+.noleftborderRadius{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.norightborderRadius{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
 .btnM{
     padding: .5rem .7rem .5rem .7rem;
     border-radius: 2rem;
@@ -69,7 +80,11 @@ body{
 }
 
 .w-fitContent{
-    width: fit-content;
+  width: fit-content;
+}
+
+.h-fitContent{
+  height: fit-content;
 }
 
 .h90vh{
